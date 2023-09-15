@@ -1,5 +1,5 @@
 
-const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3';
+const API_URL = 'https://api.thecatapi.com/v1/images/search?limit=3&api_key=live_q9uwLra7xZgTlHphHkhYwnA9WBndlSOvl8WosDdnIg6evQMibvXONhvsshbPv5Hk';
 
 async function reload() {
     const res = await fetch(API_URL);
