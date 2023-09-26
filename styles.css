@@ -1,0 +1,25 @@
+body {
+    background-color: rgb(27, 27, 27);
+}
+h1 {
+    color: blanchedalmond;
+}
+h2 {
+    color: blanchedalmond ;
+}
+.cardCats {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2px;
+    transition: grid-template-columns .3s;
+}
+
+.cardCats:has(.left:hover) {
+    grid-template-columns: 2fr .5fr .5fr;
+}
+.cardCats:has(.center:hover) {
+    grid-template-columns: .5fr 2fr .5fr;
+}
+.cardCats:has(.right:hover) {
+    grid-template-columns: .5fr .5fr 2fr;
+}
