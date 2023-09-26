@@ -2,16 +2,135 @@ body {
     background-color: rgb(27, 27, 27);
 }
 h1 {
+    font-family: cursive;
+    display: flex;
+    justify-content: center;
     color: blanchedalmond;
 }
 h2 {
-    color: blanchedalmond ;
+    display: flex;
+    font-family: cursive;
+    width: 100%;
+    justify-content: center;
+    color: blanchedalmond;
 }
+
+#randomMichis {
+    border: 2px solid yellow;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
 .cardCats {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 2px;
+    gap: 20px;
     transition: grid-template-columns .3s;
+    justify-content: center;
+    justify-items: center;
+    align-items: end;
+}
+
+.cardCats article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.cardCats article img {
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.cardCats article button {
+    width: 200px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.reloadButton {
+    font-family: cursive;
+    width: 200px;
+    height: 30px;
+    border-radius: 5px;
+    margin: 20px;
+    font-weight: bold;
+    position:  relative;
+}
+
+#uploadingMichis {
+    border: 2px solid yellow;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: cursive;
+}
+
+#uploadingMichis #uploadingForm {
+    font-family: cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+#file {
+    font-family: cursive;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+    color: blanchedalmond;
+}
+
+.uploadMichiButton {
+    font-family: cursive;
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#favoritesMichis {
+    display: flex;
+    border: 2px solid yellow;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+
+}
+
+.favoritesCardCats {
+    display: flex;
+}
+
+#favoritesMichis article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px ;
+
+}
+
+#favoritesMichis article img {
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+#favoritesMichis article button {
+    width: 200px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: cursive;
 }
 
 .cardCats:has(.left:hover) {
@@ -22,4 +141,14 @@ h2 {
 }
 .cardCats:has(.right:hover) {
     grid-template-columns: .5fr .5fr 2fr;
+}
+
+@media (max-width: 1200px) {
+    .cardCats {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }
 }

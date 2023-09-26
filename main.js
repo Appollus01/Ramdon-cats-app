@@ -2,6 +2,7 @@
 const API_URL_RANDOM = 'https://api.thecatapi.com/v1/images/search?limit=3';
 const API_URL_FAVORITES = 'https://api.thecatapi.com/v1/favourites';
 const API_URL_FAVORITES_DELETE = (id) => `https://api.thecatapi.com/v1/favourites/${id}`;
+const API_URL_UPLOAD = 'https://api.thecatapi.com/v1/images/upload';
 
 
 const spanError = document.getElementById('error')
@@ -62,7 +63,7 @@ async function loadFavoriteCats() {
 
             btn.appendChild(btnText);
             img.src =  michi.image.url;
-            img.width = 350;
+            img.width = 310;
 
             btn.onclick = () => deleteFavoriteCat(michi.id);
 
@@ -116,6 +117,32 @@ async function deleteFavoriteCat(id) {
     }
 
 }
+
+async function uploadCatPhoto() {
+    const form = document.getElementsById('uploadingForm');
+    const formData = new FormData(form);
+
+    const res = await fetch(API_URL_UPLOAD, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'multipart/form-data',
+            'X-API-KEY': 'live_q9uwLra7xZgTlHphHkhYwnA9WBndlSOvl8WosDdnIg6evQMibvXONhvsshbPv5Hk',
+        },
+        body: formData,
+    })
+
+    const data = await res.json();
+
+    if(res.status !== 201) {
+
+        spanError.innerHTML = 'Hubo un error' + res.status;
+    } else {
+        console.log('foto subida');
+        loadFavoriteCats();
+    }
+
+}
+
 
 loadRandomCats();
 loadFavoriteCats();
